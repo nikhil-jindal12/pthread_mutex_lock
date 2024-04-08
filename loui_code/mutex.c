@@ -15,7 +15,7 @@ int inc(void) {
 
 int dec(void) {
 	if (pthread_mutex_lock(&myptmlock)) printf("ERROR\n");
-	currval = count; sleep(.2); currval--; count = currval;
+	currval = count; sleep(.1); currval--; count = currval;
 	pthread_mutex_unlock(&myptmlock);
 }
 
