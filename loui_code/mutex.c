@@ -9,13 +9,13 @@ int count = 0, currval;
 pthread_mutex_t myptmlock = PTHREAD_MUTEX_INITIALIZER;
 int inc(void) {
 	if (pthread_mutex_lock(&myptmlock)) printf("ERROR\n");
-	currval = count; currval++; sleep(.2); count = currval;
+	currval = count; currval++; sleep(.1); count = currval;
 	pthread_mutex_unlock(&myptmlock);
 }
 
 int dec(void) {
 	if (pthread_mutex_lock(&myptmlock)) printf("ERROR\n");
-	currval = count; sleep(.2); currval--; count = currval;
+	currval = count; sleep(.1); currval--; count = currval;
 	pthread_mutex_unlock(&myptmlock);
 }
 
